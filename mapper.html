@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type='text/css'>
+      html, body { height: 100%; margin: 0; padding: 0; }
+      #map { height: 100%; }
+    </style>
+  </head>
+
+
+ <body>
+	<div id='map'></div>
+
+	<script type='text/javascript'>
+var locations = [
+  [{lat: 38.260133, lng: -85.447873},'Louisville','8,329'],
+  [{lat: 38.627003, lng: -90.199404},'St Louis','1,002'],
+  [{lat: 39.103118, lng: -84.512020},'Cincinnati','856'],
+  [{lat: 39.768403, lng: -86.158068},'Indy','27']
+];
+
+var map;
+function initMap() {
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 6,
+    center: locations[0][0]
+  });
+
+  for (i=0;i<4;i++) {
+      addMarker(locations[i][0], map, locations[i][1], locations[i][2]);
+  }
+
+};
+
+function addMarker(mPosition, mMap, mTitle, mItems) {
+    var putTitle = mItems + ' Items Processed in ' + mTitle;
+    var marker = new google.maps.Marker({
+        position: mPosition,
+        map: mMap,
+        title: putTitle,
+        label: mTitle
+  })
+}
+
+</script>
+
+<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDDzcJbUnkFNqPO_PbwCS_12OUaLYozdok&callback=initMap'></script>
+
+</body>
+</html>

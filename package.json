@@ -1,0 +1,14 @@
+{
+  "name": "mapper",
+  "version": "1.0.0",
+  "description": "Mapper Project",
+  "main": "mainpage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kapsay",
+  "license": "kapsay",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
